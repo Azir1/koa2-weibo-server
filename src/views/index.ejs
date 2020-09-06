@@ -11,13 +11,14 @@
   <p>EJS Welcome to <%= title %></p>
   <p><%= msg %></p>
   <p><%= locals.name %></p>
-  <div>
-    <% if(isAdmin){ %>
-    <a>@ 提到我的（2）</a>
-    <% } else{ %>
-    <button href="#">关注</button>
-    <% } %>
-  </div>
+  <hr>
+  <%- include('widgets/user-info',{
+    isAdmin
+  }) %>
+  <hr>
+  <%- include('widgets/blog-list',{
+    blogList
+  }) %>
 </body>
 
 </html>
